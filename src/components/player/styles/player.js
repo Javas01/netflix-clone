@@ -19,7 +19,7 @@ export const Inner = styled.div`
   max-width: 900px;
   margin: auto;
 
-  video {
+  iframe {
     height: 100%;
     width: 100%;
   }

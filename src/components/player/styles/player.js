@@ -16,6 +16,8 @@ margin: 0 20px;
 export const Inner = styled.div`
   position: relative;
   width: 100%;
+  height: 100%;
+  max-height: 800px;
   max-width: 900px;
   margin: auto;
 

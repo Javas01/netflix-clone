@@ -24,10 +24,11 @@ Player.Video = function PlayerVideo ({ ...restProps }) {
 
   useEffect(() => {
     async function fetchMyAPI () {
-      let response = await fetch(`https://www.googleapis.com/youtube/v3/search?maxResults=1&q=${itemFeature.slug}&key=${API_KEY}`)
+      let response = await fetch(`https://www.googleapis.com/youtube/v3/search?maxResults=5&q=${itemFeature.slug}&key=${API_KEY}`)
       response = await response.json()
-      console.log(response)
-      response.items && setSrc(response.items[0].id.videoId)
+      const videos = response.items.filter(item => item.id.kind === 'youtube#video')
+      console.log(videos)
+      videos && setSrc(videos[0].id.videoId)
     }
 
     fetchMyAPI()
